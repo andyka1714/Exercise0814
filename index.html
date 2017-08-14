@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+</head>
+<body onload="nowtime()">
+	
+	<p >貓貓大變身!!</p>
+
+	<img id="image" src="subaru.jpg" alt="" onclick="cat()"><br>
+
+	<input id="demo" type="text">
+	<button type="button" onclick="test()">猜猜貓咪幾歲?!</button><br>
+
+	<button type="button" onclick="age('subaru','3')">try</button><br>
+
+	<button type="button" onclick="week()">今天禮拜幾呢?!</button>
+	<p id="demo2"></p>
+
+	<button type="button" onclick="member()">工程部剩誰咧?!</button>
+	<p id="demo3"></p>
+
+	<button type="button" onclick="test1()">Person</button>
+	<p id="demo4"></p>
+
+	<a href="終極密碼.html">來玩終極密碼唷</a>
+
+	<div id="time" style="width: 100px ;background-color: #e0e0e0;text-align: center;"></div>
+
+	<script>
+
+		function cat(){
+			x=document.getElementById('image');
+			if(x.src.match("subaru")){
+				x.src="gureko.jpg";
+			}else{
+				x.src="subaru.jpg";
+			}
+
+		}
+
+		function test(){
+			var x=document.getElementById("demo").value;
+			if(x==""||isNaN(x)){
+				alert("叫你輸入數字聽不懂?!");
+			}else if(x=="3"){
+				alert("答對囉!!!");
+			}else{
+				alert("答錯嚕～在猜猜");
+			}
+		}
+
+		function age(name,age){
+			alert("名字:"+name+"年齡:"+age);
+		}
+
+		function week(){
+			var a = new Date().getDay();
+			var b;
+			switch(a){
+				case 0:
+				b="今天禮拜日，好好休息囉";
+				break;
+
+				case 5:
+				b="今天禮拜五，要放假啦在撐一下!!";
+				break;
+
+				case 6:
+				b="今天禮拜六，開始大玩特玩～";
+				break;
+
+				default:
+				b="還沒要放假，繼續加油吧!!";
+			}
+			document.getElementById("demo2").innerHTML=b;
+
+		}
+
+		function member(){
+			delevor=["坤強","宥儒","曜年"];
+			var x="";i=0
+			for(;i<delevor.length;){
+				x = x + delevor[i]+'<br>';
+				i++;
+			}
+			document.getElementById("demo3").innerHTML=x;
+		}
+
+		function test1(){
+			var x;
+			var y="";
+			var person={firstname:"蔡",lastname:"曜年",age:"27歲"};
+			for(x in person){
+				y = y + person[x];
+			}
+			document.getElementById("demo4").innerHTML=y;
+		}
+
+		function nowtime(){
+			var now = new Date();
+			var h = now.getHours();
+			var m = now.getMinutes();
+			var s = now.getSeconds();
+			m = checktime(m);
+			s = checktime(s);
+			document.getElementById("time").innerHTML = h + "：" + m + "：" + s;
+			t=setTimeout('nowtime()',500)
+		}
+		function checktime(i){
+			if(i<10){
+				i = "0" + i;
+			}
+			return i;
+		}
+	</script>
+
+	 
+
+</body>
+</html>
