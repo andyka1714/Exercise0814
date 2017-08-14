@@ -18,12 +18,23 @@
 			}
 			if(2877<x && x<3877){
 				y.style.color="#f00";
+			}else{
+				y.style.color="#000";
 			}
 		}
+
+		function checkCookies(){
+			if (navigator.cookieEnabled==true){
+				alert("開始玩終極密碼囉！！")
+				}else{
+				alert("不玩了哦  好難過～")
+				}
+		}
+
 	</script>
 </head>
 
-<body>
+<body onload="checkCookies()">
 	<h1 class="title">終極密碼</h1>
 	<p>請輸入1～10000的數字</p>
 	<input id="guess" type="text">
