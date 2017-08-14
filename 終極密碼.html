@@ -9,12 +9,15 @@
 				var x = document.getElementById("guess").value;
 				if(x=="") 		throw "請輸入數字開始猜唷～";
 				if(isNaN(x)) 	throw "輸入數字好嗎?!";
-				if(x>5762) 		throw "太大囉，猜小一點";
-				if(x<5760) 		throw "太小囉，猜大一點";
-				if(x==5761) 	throw "恭喜你答對囉!!!";
+				if(x>3377) 		throw "太大囉，猜小一點";
+				if(x<3375) 		throw "太小囉，猜大一點";
+				if(x==3376) 	throw "恭喜你答對囉!!!";
 			}catch(err){
 				var y = document.getElementById("message");
 				y.innerHTML= err ;
+			}
+			if(2877<x && x<3877){
+				y.style.color="#f00";
 			}
 		}
 	</script>
