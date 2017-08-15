@@ -3,6 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Test</title>
+	<style>
+		
+
+	</style>
 </head>
 <body onload="nowtime()">
 	
@@ -11,20 +15,23 @@
 	<img id="image" src="subaru.jpg" alt="" onclick="cat()"><br>
 
 	<input id="demo" type="text">
-	<button type="button" onclick="test()">猜猜貓咪幾歲?!</button><br>
+	<button type="button" onclick="test()">猜猜貓咪幾歲?!</button><br><br>
 
-	<button type="button" onclick="age('subaru','3')">try</button><br>
+	<button type="button" onclick="age('subaru','3')">try</button><br><br>
 
 	<button type="button" onclick="week()">今天禮拜幾呢?!</button>
-	<p id="demo2"></p>
+	<p id="demo2"></p><br>
 
 	<button type="button" onclick="member()">工程部剩誰咧?!</button>
-	<p id="demo3"></p>
+	<p id="demo3"></p><br>
 
 	<button type="button" onclick="test1()">Person</button>
-	<p id="demo4"></p>
+	<p id="demo4"></p><br>
 
-	<a href="終極密碼.html">來玩終極密碼唷</a>
+	<a href="終極密碼.html">來玩終極密碼唷</a><br><br>
+
+	<button type="button" onclick="guess()">樂透開獎囉!!</button><br><br>
+	<div id="demo5" style="width: 200px;height: 20px; background-color: yellow;text-align: center;"></div><br>
 
 	<div id="time" style="width: 100px ;background-color: #e0e0e0;text-align: center;"></div>
 
@@ -113,6 +120,16 @@
 				i = "0" + i;
 			}
 			return i;
+		}
+
+		function guess(){
+			var a = Math.floor(Math.random()*49+1)
+			var b = Math.floor(Math.random()*49+1)
+			var c = Math.floor(Math.random()*49+1)
+			var d = Math.floor(Math.random()*49+1)
+			var e = Math.floor(Math.random()*49+1)
+			var f = Math.floor(Math.random()*49+1)
+			document.getElementById("demo5").innerHTML = a + "，" + b + "，" + c + "，" + d + "，" + e + "，" + f ;
 		}
 	</script>
 
